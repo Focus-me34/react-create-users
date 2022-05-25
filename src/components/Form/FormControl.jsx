@@ -5,8 +5,7 @@ import Modal from "../UI/Modal";
 
 const FormControl = (props) => {
   const [isValid, setIsValid] = useState(true);
-  const [message, setMessage] = useState("ok")
-  const value = "";
+  const [message, setMessage] = useState(null)
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -37,7 +36,7 @@ const FormControl = (props) => {
   };
 
   const changeMessageHandler = () => {
-    setMessage("ok");
+    setMessage(null);
   }
 
   return (
@@ -58,7 +57,7 @@ const FormControl = (props) => {
         <button type="submit" className={styles["form-control__submit-button"]}>Add User</button>
       </form >
 
-      {message !== "ok" && <Modal message={message} onCloseModal={changeMessageHandler} />}
+      {message !== null && <Modal message={message} onCloseModal={changeMessageHandler} />}
     </div>
   )
 }

@@ -1,0 +1,8 @@
+CHECK THE SOLUTION FOR THIS CHALLENGE AT THIS URL:
+https://github.com/academind/react-complete-guide-code/tree/08-practice-project
+
+NB: I didn't correct anything on my code as everything was working and the way
+it is in the correction videos.
+The main diference is the names being used for every single component
+
+Happy ✅

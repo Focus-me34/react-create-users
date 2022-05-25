@@ -17,7 +17,7 @@ const Modal = (props) => {
   };
 
   return (
-    <div className={styles["backdrop-container"]}>
+    <div className={styles["backdrop-container"]} onClick={closeModalHandler}>
       <div className={classes} >
         <h2>Invalid input</h2>
         {errorMessage}

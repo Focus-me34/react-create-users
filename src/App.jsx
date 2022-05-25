@@ -8,7 +8,6 @@ import UserList from "./components/List/UserList";
 const App = () => {
   const [users, setUsers] = useState([]);
   const [hideCard, setHideCard] = useState(users.length === 0 ? true : false);
-  const [hideModal, setHideModal] = useState(true);
 
   const getUserDetails = (user) => {
     setUsers(previousState => [...previousState, user])
