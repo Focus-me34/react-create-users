@@ -13,8 +13,6 @@ const App = () => {
   const getUserDetails = (user) => {
     setUsers(previousState => [...previousState, user])
     setHideCard(false)
-    console.log(user);
-    console.log(users);
   };
 
   return (

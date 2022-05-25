@@ -17,11 +17,13 @@ const Modal = (props) => {
   };
 
   return (
-    <div className={classes} >
-      <h2>Invalid input</h2>
-      {errorMessage}
-      <button onClick={closeModalHandler}>Got it!</button>
-    </ div >
+    <div className={styles["backdrop-container"]}>
+      <div className={classes} >
+        <h2>Invalid input</h2>
+        {errorMessage}
+        <button onClick={closeModalHandler}>Got it!</button>
+      </ div >
+    </div>
   )
 
 }
