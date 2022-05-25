@@ -6,12 +6,13 @@ import FormControl from "./components/Form/FormControl";
 import UserList from "./components/List/UserList";
 
 const App = () => {
-  const [users, setUsers] = useState([{ id: 1, username: "Sunamin", age: 29 }]);
+  const [users, setUsers] = useState([]);
   const [hideCard, setHideCard] = useState(users.length === 0 ? true : false);
   const [hideModal, setHideModal] = useState(true);
 
   const getUserDetails = (user) => {
     setUsers(previousState => [...previousState, user])
+    setHideCard(false)
     console.log(user);
     console.log(users);
   };
