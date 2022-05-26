@@ -15,7 +15,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <Card>
         <FormControl onCreateUser={getUserDetails} users={users} />
       </Card>
@@ -25,7 +25,7 @@ const App = () => {
           <UserList users={users} />
         </Card>
       }
-    </div>
+    </React.Fragment>
   )
 }
 

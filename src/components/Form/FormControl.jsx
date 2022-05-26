@@ -1,36 +1,39 @@
-import React, { useState } from "react";
-import styles from "./FormControl.module.scss";
+import React, { useState, Fragment, useRef, useEffect } from "react";
 import Modal from "../UI/Modal";
-
+import styles from "./FormControl.module.scss";
 
 const FormControl = (props) => {
   const [isValid, setIsValid] = useState(true);
   const [message, setMessage] = useState(null)
+  const usernameInputRef = useRef();
+  const userAgeInputRef = useRef();
+  console.log(usernameInputRef);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const enteredUsername = usernameInputRef.current.value;
+    const enteredUserAge = userAgeInputRef.current.value;
 
-    if (parseInt(e.target.elements[1].value) <= 0) {
+    if (parseInt(enteredUserAge) <= 0) {
       setIsValid(false);
       setMessage("negative");
-      console.log("negative");
       return
-    } else if ((e.target.elements[0].value.trim().length === 0) || (e.target.elements[1].value.trim().length === 0)) {
+
+    } else if ((enteredUsername.trim().length === 0) || (enteredUserAge.trim().length === 0)) {
       setIsValid(false);
       setMessage("missing");
-      console.log("missing");
       return
     }
 
     setIsValid(true);
     const newUser = {
       id: props.users.length + 1,
-      username: e.target.elements[0].value,
-      age: e.target.elements[1].value
+      username: enteredUsername,
+      age: enteredUserAge
     }
 
-    e.target.elements[0].value = "";
-    e.target.elements[1].value = "";
+    usernameInputRef.current.value = "";
+    userAgeInputRef.current.value = "";
 
     props.onCreateUser(newUser)
   };
@@ -40,17 +43,17 @@ const FormControl = (props) => {
   }
 
   return (
-    <div>
+    <Fragment>
       <form onSubmit={submitHandler}>
         <div className={styles["form-control__container-inputs"]}>
           <div className={styles["form-control__input"]}>
             <label htmlFor="user">Username</label>
-            <input className={!isValid ? styles["wrong-input"] : ""} type="text" id="user" name="user" placeholder="Enter a new Username" />
+            <input className={!isValid ? styles["wrong-input"] : ""} type="text" id="user" name="user" placeholder="Enter a new Username" ref={usernameInputRef} />
           </div>
 
           <div className={styles["form-control__input"]}>
             <label htmlFor="age">Age (In years)</label>
-            <input className={!isValid ? styles["wrong-input"] : ""} type="number" id="age" name="age" placeholder="Enter an age number" />
+            <input className={!isValid ? styles["wrong-input"] : ""} type="number" id="age" name="age" placeholder="Enter an age number" ref={userAgeInputRef} />
           </div>
         </div>
 
@@ -58,7 +61,7 @@ const FormControl = (props) => {
       </form >
 
       {message !== null && <Modal message={message} onCloseModal={changeMessageHandler} />}
-    </div>
+    </Fragment>
   )
 }
 
