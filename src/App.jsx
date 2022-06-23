@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './App.scss';
 
 import Card from "./components/UI/Card";
-import FormControl from "./components/Form/FormControl";
+import Form from "./components/FormControl/Form";
 import UserList from "./components/List/UserList";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Card>
-        <FormControl onCreateUser={getUserDetails} users={users} />
+        <Form onCreateUser={getUserDetails} users={users} />
       </Card>
 
       {hideCard === false &&
