@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './App.scss';
-// Will be removed.
 
+const test = "THIS IS USELESS"
 import Card from "./components/UI/Card";
 import FormControl from "./components/Form/FormControl";
 import UserList from "./components/List/UserList";
