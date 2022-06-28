@@ -1,0 +1,21 @@
+.form-control__submit-button {
+  display: block;
+  font-size: 2rem;
+  width: 15rem;
+  height: auto;
+  margin: 1rem auto 2rem;
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+
+  transition: 0.2s;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &:hover {
+    transition: 0.2s;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  }
+}

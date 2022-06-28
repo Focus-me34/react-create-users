@@ -1,0 +1,27 @@
+.form-control__container-inputs {
+  padding: 1rem
+}
+
+.form-control__input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control__input label {
+  position: relative;
+  left: 5%;
+  margin: 1rem 0 0.5rem;
+  text-align: left;
+}
+
+.form-control__input input {
+  width: 90%;
+  height: 2rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.wrong-input {
+  background-color: rgba(136, 44, 44, 0.3);
+}

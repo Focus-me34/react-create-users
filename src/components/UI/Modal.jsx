@@ -5,7 +5,7 @@ import styles from "./Modal.module.scss";
 
 let classes = `${styles.modal}`
 
-// ! BACKDROP FOR THE MODAL COMPONENT 
+// ! BACKDROP FOR THE MODAL COMPONENT
 const Backdrop = (props) => {
   const closeModalHandler = () => {
     classes += " d-none";
@@ -30,6 +30,10 @@ const ModalOverlay = (props) => {
     errorMessage = <p>Please make sure you fill up all the inputs!</p>
   } else if (props.message === "negative") {
     errorMessage = <p>Please, make sure you enter a valid age! (`{'>'}` 0)</p>
+  } else if (props.message === "short") {
+    errorMessage = <p>Please, make sure the username is long enough! (Longer than 4 characters)</p>
+  } else if (props.message === "old") {
+    errorMessage = <p>Is the user a turtle?</p>
   };
 
   return (
